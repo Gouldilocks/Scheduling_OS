@@ -1,5 +1,12 @@
 import java.util.*;
 
+class SortByPriority_RR implements Comparator<Task> {
+
+  public int compare(Task a, Task b) {
+    return b.getPriority() - a.getPriority();
+  }
+}
+
 public class PriorityRR implements Algorithm {
 
   private ArrayList<Task> taskQueue;
