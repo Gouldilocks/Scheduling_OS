@@ -11,15 +11,16 @@ public class FCFS implements Algorithm{
   public void schedule() {
     System.out.println("Scheduling FCFS");
     System.out.println();
+
     // keep it the same order
-    for (Task curr : taskQueue) {
-      CPU.run(curr, curr.getBurst());
+    while (this.taskQueue.size() > 0) {
+      CPU.run(pickNextTask(), pickNextTask().getBurst());
+      this.taskQueue.remove(0);
     }
   }
 
   // this function is not needed because it simply runs straight through one by one
   public Task pickNextTask() {
-    System.out.println("Picking next task in FCFS");
-    return new Task("fake", 0, 0);
+    return this.taskQueue.get(0);
   }
 }

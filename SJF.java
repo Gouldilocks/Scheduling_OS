@@ -18,14 +18,16 @@ public class SJF implements Algorithm {
   public void schedule() {
     System.out.println("Scheduling SJF");
     System.out.println();
+
+    // sort them by their time
     this.taskQueue.sort(new SortByTime());
-    for (Task i : this.taskQueue) {
-      CPU.run(i, i.getBurst());
+    while(this.taskQueue.size() > 0) {
+      CPU.run(pickNextTask(), pickNextTask().getBurst());
+      this.taskQueue.remove(0);
     }
   }
 
   public Task pickNextTask() {
-    System.out.println("Picking next task in SJF");
-    return new Task("fake", 0, 0);
+    return this.taskQueue.get(0);
   }
 }
