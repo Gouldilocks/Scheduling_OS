@@ -13,5 +13,10 @@ public class CPU
      */
     public static void run(Task task, int slice) {
         System.out.println("Will run " + task);
+        // if the task is finished running
+        if (task.run(slice)) {
+           System.out.println("Completed Task " + task.getName()); 
+           System.out.println();
+        }
     }
 }

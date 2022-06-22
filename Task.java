@@ -22,6 +22,7 @@ public class Task
     private int tid;
     private int priority;
     private int burst;
+    private int remaining;
 
     /**
      * We use an atomic integer to assign each task a unique task id.
@@ -32,7 +33,7 @@ public class Task
         this.name = name;
         this.priority = priority;
         this.burst = burst;
-
+        this.remaining = burst;
         this.tid = tidAllocator.getAndIncrement();
     }
 
@@ -68,6 +69,17 @@ public class Task
         this.burst = burst;
 
         return burst;
+    }
+
+    // Function returns true if finished, false if not
+    public boolean run(int slice) {
+        if (slice >= remaining) {
+            return true;
+        }
+        else {
+            remaining -= slice;
+            return false;
+        }
     }
 
     /**
