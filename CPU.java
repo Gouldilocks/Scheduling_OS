@@ -11,11 +11,11 @@ public class CPU
     /**
      * Run the specified task for the specified slice of time.
      */
-    public static void run(Task task, int slice) {
+    public static void run(Task task, int slice, boolean toCompletion) {
         System.out.println("Will run " + task);
         // if the task is finished running
-        if (task.run(slice)) {
-           System.out.println("Completed Task " + task.getName()); 
+        if (task.run(slice, toCompletion)) {
+           System.out.println("Task " + task.getName() + " finished."); 
            System.out.println();
         }
     }

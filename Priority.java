@@ -20,7 +20,7 @@ public class Priority implements Algorithm {
     this.taskQueue.sort(new SortByPriority());
 
     while(this.taskQueue.size() > 0) {
-      CPU.run(pickNextTask(), pickNextTask().getBurst());
+      CPU.run(pickNextTask(), pickNextTask().getBurst(), false);
       this.taskQueue.remove(0);
     }
   }

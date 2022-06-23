@@ -70,7 +70,11 @@ public class Task
     }
 
     // Function returns true if finished, false if not
-    public boolean run(int slice) {
+    public boolean run(int slice, boolean toCompletion) {
+        if (toCompletion) {
+            burst = 0;
+            return true;
+        }
         burst -= slice;
         if (burst <= 0) {
             return true;

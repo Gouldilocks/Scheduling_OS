@@ -44,18 +44,23 @@ public class Driver
 
         switch(choice) {
             case "FCFS":
+                System.out.println("First Come First Serve Scheduling\n");
                 scheduler = new FCFS(queue);
                 break;
             case "SJF":
+                System.out.println("Shortest Job First Scheduling\n");
                 scheduler = new SJF(queue);
                 break;
             case "PRI":
+                System.out.println("Priority Scheduling (Highest Priority First)\n");
                 scheduler = new Priority(queue);
                 break;
             case "RR":
+                System.out.println("Round Robin Scheduling\n");
                 scheduler = new RR(queue);
                 break;
             case "PRI-RR":
+                System.out.println("Priority with RR Scheduling\n");
                 scheduler = new PriorityRR(queue);
                 break;
             default:

@@ -19,7 +19,7 @@ public class SJF implements Algorithm {
     // sort them by their time
     this.taskQueue.sort(new SortByTime());
     while(this.taskQueue.size() > 0) {
-      CPU.run(pickNextTask(), pickNextTask().getBurst());
+      CPU.run(pickNextTask(), pickNextTask().getBurst(), false);
       this.taskQueue.remove(0);
     }
   }

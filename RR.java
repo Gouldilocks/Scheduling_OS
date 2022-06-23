@@ -13,7 +13,7 @@ public class RR implements Algorithm {
   public void schedule() {
     while (this.taskQueue.size() > 0) {
       // run the task, reduce its burst amt
-      CPU.run(pickNextTask(), this.burstAmt);
+      CPU.run(pickNextTask(), this.burstAmt, this.taskQueue.size() == 1);
 
       // if the next task is done executing
       if (pickNextTask().getBurst() <= 0) {
