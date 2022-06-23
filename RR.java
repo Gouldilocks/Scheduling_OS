@@ -11,9 +11,6 @@ public class RR implements Algorithm {
   }
 
   public void schedule() {
-    System.out.println("Scheduling RR");
-    System.out.println();
-
     while (this.taskQueue.size() > 0) {
       // run the task, reduce its burst amt
       CPU.run(pickNextTask(), this.burstAmt);

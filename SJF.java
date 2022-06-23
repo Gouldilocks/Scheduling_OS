@@ -16,9 +16,6 @@ public class SJF implements Algorithm {
   }
   
   public void schedule() {
-    System.out.println("Scheduling SJF");
-    System.out.println();
-
     // sort them by their time
     this.taskQueue.sort(new SortByTime());
     while(this.taskQueue.size() > 0) {

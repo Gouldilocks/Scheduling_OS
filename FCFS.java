@@ -9,9 +9,6 @@ public class FCFS implements Algorithm{
   }
   
   public void schedule() {
-    System.out.println("Scheduling FCFS");
-    System.out.println();
-
     // keep it the same order
     while (this.taskQueue.size() > 0) {
       CPU.run(pickNextTask(), pickNextTask().getBurst());

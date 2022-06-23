@@ -16,9 +16,6 @@ public class Priority implements Algorithm {
   }
 
   public void schedule() {
-    System.out.println("Scheduling Priority");
-    System.out.println();
-
     // sort by priority
     this.taskQueue.sort(new SortByPriority());
 
